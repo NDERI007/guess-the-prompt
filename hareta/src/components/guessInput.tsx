@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useGameState } from '../state/gameState';
+import { useGameState } from '../state/gamestate';
 
 export default function GuessInput() {
   const [input, setInput] = useState('');
@@ -7,7 +7,7 @@ export default function GuessInput() {
   const submitGuess = useGameState((state) => state.submitGuess);
   const feedback = useGameState((state) => state.feedback);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
